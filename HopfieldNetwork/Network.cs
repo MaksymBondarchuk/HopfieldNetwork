@@ -10,8 +10,19 @@ namespace HopfieldNetwork
 
 		public void Learn(List<List<int>> images)
 		{
+			#region Ensure can remember all images
+
+			if (images.First().Count * 0.14 < images.Count)
+			{
+				Console.ForegroundColor = ConsoleColor.Red;
+				Console.WriteLine($"Network cannot remember more than {Math.Floor(images.First().Count * 0.14)} images");
+				return;
+			}
+
+			#endregion
+
 			Initialize(images);
-			
+
 			for (int i = 0; i < images.First().Count; i++)
 			{
 				for (int j = 0; j < i; j++)
@@ -40,7 +51,7 @@ namespace HopfieldNetwork
 				isStable = newNeurons.SequenceEqual(neurons);
 				neurons = new List<int>(newNeurons);
 			}
-			
+
 			return neurons;
 		}
 
@@ -55,6 +66,7 @@ namespace HopfieldNetwork
 				{
 					weightsLine.Add(0);
 				}
+
 				_weights.Add(weightsLine);
 			}
 		}
