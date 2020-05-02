@@ -9,28 +9,49 @@ namespace HopfieldNetwork
 		private static void Main()
 		{
 			var network = new Network();
-			// K and N
-			// C and O
-			// Z
-			network.Learn(new List<List<int>> {ImagesHelper.T, ImagesHelper.K, ImagesHelper.V, ImagesHelper.C, ImagesHelper.P});
-
-			
-			// K
-			List<int> image = network.TryToRemember(new List<int>
+			// network.Learn(new List<List<int>>
+			// {
+			// 	ImagesHelper.A,
+			// 	ImagesHelper.B,
+			// 	ImagesHelper.C,
+			// 	ImagesHelper.F,
+			// 	ImagesHelper.K,
+			// 	ImagesHelper.L,
+			// 	ImagesHelper.N,
+			// 	ImagesHelper.O,
+			// 	ImagesHelper.P,
+			// 	ImagesHelper.S,
+			// 	ImagesHelper.T,
+			// 	ImagesHelper.V,
+			// 	ImagesHelper.X,
+			// 	ImagesHelper.Z,
+			// });
+			network.Learn(new List<List<int>>
 			{
-				-1, 01, 01, 01, 01, 01, 01,
-				-1, 01, -1, 01, 01, -1, 01,
-				-1, 01, 01, 01, -1, 01, 01,
-				-1, -1, -1, -1, 01, 01, 01,
-				-1, 01, 01, 01, -1, 01, 01,
-				-1, 01, -1, 01, -1, -1, 01,
-				-1, 01, 01, 01, 01, 01, -1,
-				-1, 01, 01, 01, 01, 01, -1
+				ImagesHelper.T,
+				ImagesHelper.K,
+				ImagesHelper.V,
+				ImagesHelper.C,
 			});
-			PrintImage(image);
+
+
+			// // A
+			// Console.WriteLine("A");
+			// PrintImage(network.TryToRemember(new List<int>
+			// {
+			// 	01, 01, 01, -1, 01, 01, 01,
+			// 	01, 01, -1, 01, -1, 01, 01,
+			// 	01, 01, -1, -1, -1, 01, 01,
+			// 	01, -1, 01, 01, 01, -1, 01,
+			// 	01, -1, -1, -1, -1, -1, 01,
+			// 	01, -1, 01, 01, 01, -1, 01,
+			// 	-1, 01, 01, 01, 01, 01, -1,
+			// 	-1, 01, 01, 01, 01, -1, 01
+			// }));
 
 			// C
-			image = network.TryToRemember(new List<int>
+			Console.WriteLine("C");
+			PrintImage(network.TryToRemember(new List<int>
 			{
 				-1, -1, -1, -1, -1, -1, -1,
 				-1, 01, 01, 01, 01, 01, 01,
@@ -40,11 +61,82 @@ namespace HopfieldNetwork
 				-1, 01, 01, 01, -1, 01, 01,
 				-1, 01, 01, 01, 01, 01, 01,
 				-1, 01, -1, -1, -1, -1, -1
-			});
-			PrintImage(image);
+			}));
+
+
+			// K
+			Console.WriteLine("K");
+			PrintImage(network.TryToRemember(new List<int>
+			{
+				-1, 01, 01, 01, 01, 01, 01,
+				-1, 01, -1, 01, 01, -1, 01,
+				-1, 01, 01, 01, -1, 01, 01,
+				-1, -1, -1, -1, 01, 01, 01,
+				-1, 01, 01, 01, -1, 01, 01,
+				-1, 01, -1, 01, -1, -1, 01,
+				-1, 01, 01, 01, 01, 01, -1,
+				-1, 01, 01, 01, 01, 01, -1
+			}));
+
+			// // L
+			// Console.WriteLine("L");
+			// PrintImage(network.TryToRemember(new List<int>
+			// {
+			// 	-1, 01, 01, 01, 01, 01, 01,
+			// 	-1, 01, 01, 01, 01, 01, 01,
+			// 	-1, 01, -1, 01, 01, 01, 01,
+			// 	-1, 01, 01, 01, 01, 01, -1,
+			// 	-1, 01, 01, 01, 01, 01, 01,
+			// 	01, 01, 01, 01, 01, 01, 01,
+			// 	-1, 01, 01, 01, 01, 01, 01,
+			// 	-1, -1, -1, -1, -1, -1, -1
+			// }));
+
+			// // N
+			// Console.WriteLine("N");
+			// PrintImage(network.TryToRemember(new List<int>
+			// {
+			// 	-1, 01, 01, 01, -1, 01, -1,
+			// 	-1, 01, 01, 01, 01, -1, -1,
+			// 	-1, 01, 01, 01, -1, 01, -1,
+			// 	-1, 01, 01, -1, 01, 01, -1,
+			// 	-1, 01, 01, 01, 01, 01, -1,
+			// 	-1, 01, -1, 01, 01, 01, -1,
+			// 	-1, -1, 01, 01, 01, 01, -1,
+			// 	-1, 01, 01, 01, 01, -1, -1
+			// }));
+
+			// // O
+			// Console.WriteLine("O");
+			// PrintImage(network.TryToRemember(new List<int>
+			// {
+			// 	-1, -1, -1, -1, -1, -1, -1,
+			// 	-1, 01, 01, 01, 01, 01, -1,
+			// 	-1, 01, 01, 01, 01, 01, -1,
+			// 	-1, 01, 01, -1, 01, 01, -1,
+			// 	-1, 01, 01, -1, 01, 01, -1,
+			// 	-1, 01, 01, -1, 01, 01, -1,
+			// 	-1, 01, 01, 01, 01, 01, -1,
+			// 	-1, -1, -1, 01, -1, -1, -1
+			// }));
+
+			// // S
+			// Console.WriteLine("S");
+			// PrintImage(network.TryToRemember(new List<int>
+			// {
+			// 	01, -1, -1, -1, -1, -1, -1,
+			// 	-1, 01, 01, 01, -1, 01, 01,
+			// 	-1, 01, 01, 01, 01, 01, 01,
+			// 	01, -1, 01, -1, -1, -1, 01,
+			// 	01, 01, 01, 01, 01, 01, -1,
+			// 	01, 01, 01, 01, 01, 01, -1,
+			// 	01, 01, 01, 01, 01, 01, -1,
+			// 	-1, -1, 01, -1, -1, -1, 01,
+			// }));
 
 			// T
-			image = network.TryToRemember(new List<int>
+			Console.WriteLine("T");
+			PrintImage(network.TryToRemember(new List<int>
 			{
 				-1, -1, 01, -1, -1, -1, -1,
 				01, 01, 01, -1, 01, 01, 01,
@@ -54,11 +146,11 @@ namespace HopfieldNetwork
 				01, 01, 01, -1, 01, 01, 01,
 				01, -1, 01, 01, 01, 01, 01,
 				01, 01, 01, -1, 01, 01, 01
-			});
-			PrintImage(image);
+			}));
 
 			// V
-			image = network.TryToRemember(new List<int>
+			Console.WriteLine("V");
+			PrintImage(network.TryToRemember(new List<int>
 			{
 				-1, 01, 01, 01, 01, 01, -1,
 				-1, 01, 01, -1, 01, 01, -1,
@@ -68,22 +160,21 @@ namespace HopfieldNetwork
 				01, 01, -1, 01, -1, 01, 01,
 				01, 01, 01, -1, 01, 01, 01,
 				01, 01, 01, -1, 01, 01, 01
-			});
-			PrintImage(image);
+			}));
 
-			// P
-			image = network.TryToRemember(new List<int>
-			{
-				01, -1, -1, -1, -1, 01, 01,
-				01, -1, 01, -1, -1, 01, -1,
-				01, -1, 01, 01, -1, 01, 01,
-				01, -1, 01, 01, -1, 01, 01,
-				01, -1, 01, -1, -1, 01, 01,
-				01, -1, 01, 01, 01, 01, 01,
-				01, -1, 01, 01, 01, 01, 01,
-				01, -1, 01, 01, 01, 01, 01
-			});
-			PrintImage(image);
+			// // X
+			// Console.WriteLine("X");
+			// PrintImage(network.TryToRemember(new List<int>
+			// {
+			// 	-1, 01, 01, 01, 01, 01, -1,
+			// 	01, -1, 01, 01, 01, 01, 01,
+			// 	01, 01, -1, 01, -1, 01, 01,
+			// 	01, -1, 01, -1, 01, 01, 01,
+			// 	01, 01, 01, -1, 01, 01, 01,
+			// 	01, 01, -1, 01, -1, 01, 01,
+			// 	01, 01, 01, 01, 01, -1, 01,
+			// 	-1, 01, 01, 01, 01, 01, -1
+			// }));
 		}
 
 		private static void PrintImage(IReadOnlyList<int> image)
