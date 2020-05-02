@@ -25,26 +25,26 @@ namespace HopfieldNetwork
 
 			#region Hamming distances
 
-			for (int i = 0; i < images.Count; i++)
-			{
-				for (int j = 0; j < images.Count; j++)
-				{
-					int distance = HammingDistance(images[i], images[j]);
-					if (distance < images.First().Count * .35 && distance != 0)
-					{
-						ConsoleColor color = Console.BackgroundColor;
-						Console.BackgroundColor = ConsoleColor.Red;
-						Console.Write($"{distance,8}");
-						Console.BackgroundColor = color;
-					}
-					else
-					{
-						Console.Write($"{distance,8}");
-					}
-				}
-
-				Console.WriteLine();
-			}
+			// for (int i = 0; i < images.Count; i++)
+			// {
+			// 	for (int j = 0; j < images.Count; j++)
+			// 	{
+			// 		int distance = HammingDistance(images[i], images[j]);
+			// 		if (distance < images.First().Count * .35 && distance != 0)
+			// 		{
+			// 			ConsoleColor color = Console.BackgroundColor;
+			// 			Console.BackgroundColor = ConsoleColor.Red;
+			// 			Console.Write($"{distance,8}");
+			// 			Console.BackgroundColor = color;
+			// 		}
+			// 		else
+			// 		{
+			// 			Console.Write($"{distance,8}");
+			// 		}
+			// 	}
+			//
+			// 	Console.WriteLine();
+			// }
 
 			#endregion
 
@@ -68,12 +68,12 @@ namespace HopfieldNetwork
 		{
 			#region Hamming distances
 
-			for (int i = 0; i < _images.Count; i++)
-			{
-				Console.Write($"{HammingDistance(_images[i], image),8}");
-			}
-
-			Console.WriteLine();
+			// for (int i = 0; i < _images.Count; i++)
+			// {
+			// 	Console.Write($"{HammingDistance(_images[i], image),8}");
+			// }
+			//
+			// Console.WriteLine();
 
 			#endregion
 
